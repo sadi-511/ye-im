@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sana Özel ❤</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Georgia, serif;
+        color: white;
+        text-align: center;
+        background: url('https://i.ibb.co/zqjrNnL/Whats-App-Image-2025-08-12-at-06-04-18-Kopya.jpg') no-repeat center center/cover;
+    }
+    .overlay {
+        background-color: rgba(0,0,0,0.5);
+        padding: 20px;
+        min-height: 100vh;
+    }
+    h1, p {
+        text-shadow: 2px 2px 8px black;
+    }
+    h1 {
+        margin-top: 50px;
+        font-size: 1.8em;
+    }
+    .buttons {
+        margin-top: 30px;
+    }
+    button {
+        font-size: 1.5em;
+        padding: 15px 30px;
+        margin: 10px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .yes {
+        background-color: #4caf50;
+        color: white;
+    }
+    .no {
+        background-color: #f44336;
+        color: white;
+    }
+    #gifContainer img {
+        margin-top: 20px;
+        max-width: 80%;
+    }
+</style>
+</head>
+<body>
+
+<audio src="music.mp3" autoplay loop></audio>
+
+<div class="overlay">
+    <h1>Belki kelimeler her zaman yeterli olmaz…<br>
+    Ama bugün, sana hissettiklerimi en saf haliyle göstermek istedim.</h1>
+
+    <p style="margin-top:20px;">
+        Hayat, sensiz biraz eksik…<br>
+        Gülüşün, varlığın, dokunuşun…<br>
+        Hepsi bende iz bıraktı.<br><br>
+        Bu sayfa, yalnızca sana ait.<br>
+        Çünkü sorum da yalnızca sana…
+    </p>
+
+    <h2 style="margin-top:40px;">Benimle yeniden başlar mısın?</h2>
+
+    <div class="buttons">
+        <button class="yes" id="yesBtn">Evet</button>
+        <button class="no" id="noBtn">Hayır</button>
+    </div>
+
+    <div id="response" style="margin-top:20px;font-size:1.2em;"></div>
+    <div id="gifContainer"></div>
+</div>
+
+<script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const response = document.getElementById("response");
+    const gifContainer = document.getElementById("gifContainer");
+    let yesText = "Evet";
+    let fontSize = 1.5;
+
+    yesBtn.addEventListener("click", () => {
+        if (yesText.length < 10) {
+            yesText += "t";
+            yesBtn.textContent = yesText;
+            fontSize += 0.5;
+            yesBtn.style.fontSize = fontSize + "rem";
+        } else {
+            yesBtn.textContent = "EVEETTTT!!";
+            yesBtn.style.fontSize = "4rem";
+            gifContainer.innerHTML = '<img src="dans.gif" alt="Dans">';
+        }
+    });
+
+    noBtn.addEventListener("click", () => {
+        response.textContent = "Bir kez daha düşün 🥹";
+    });
+</script>
+
+</body>
+</html>
